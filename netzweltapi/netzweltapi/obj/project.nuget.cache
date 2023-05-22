@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ws5R6pjpEdh4Z3Hf9fM+lHz5bNmvKjrLADenwBqwwRnqkBBSKrprKVNhwAn/7UOh5G+NybfcZ2+jNf/UST3MaQ==",
+  "dgSpecHash": "QF74beYjvBO399cMLuSWumB8NZ+eOoeY0OgJwebDK5Plpu1msvn9pDW00TLlkGJBf8jTNthD+9rdgEzrez+emA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Rhico\\Documents\\netzweltapi\\netzweltapi\\netzweltapi.csproj",
+  "projectFilePath": "C:\\Users\\Rhico\\Documents\\netzwelt_api_backend\\netzweltapi\\netzweltapi\\netzweltapi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rhico\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\Rhico\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

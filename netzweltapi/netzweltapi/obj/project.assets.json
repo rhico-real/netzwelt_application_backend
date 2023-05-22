@@ -362,11 +362,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rhico\\Documents\\netzweltapi\\netzweltapi\\netzweltapi.csproj",
+      "projectUniqueName": "C:\\Users\\Rhico\\Documents\\netzwelt_api_backend\\netzweltapi\\netzweltapi\\netzweltapi.csproj",
       "projectName": "netzweltapi",
-      "projectPath": "C:\\Users\\Rhico\\Documents\\netzweltapi\\netzweltapi\\netzweltapi.csproj",
+      "projectPath": "C:\\Users\\Rhico\\Documents\\netzwelt_api_backend\\netzweltapi\\netzweltapi\\netzweltapi.csproj",
       "packagesPath": "C:\\Users\\Rhico\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rhico\\Documents\\netzweltapi\\netzweltapi\\obj\\",
+      "outputPath": "C:\\Users\\Rhico\\Documents\\netzwelt_api_backend\\netzweltapi\\netzweltapi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Rhico\\AppData\\Roaming\\NuGet\\NuGet.Config",
