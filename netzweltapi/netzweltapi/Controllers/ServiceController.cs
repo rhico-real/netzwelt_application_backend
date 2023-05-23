@@ -57,8 +57,7 @@ namespace netzweltapi.Controllers
                 Data data = new Data();
                 data.data = finalList;
 
-                // return Ok(JsonConvert.SerializeObject(data));
-                return Ok(finalList);
+                return Ok(JsonConvert.SerializeObject(data));
             }
 
             return Ok();
