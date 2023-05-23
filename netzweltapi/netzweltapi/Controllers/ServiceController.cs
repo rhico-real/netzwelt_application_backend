@@ -4,6 +4,7 @@ using netzweltapi.Models;
 using System.Net;
 using System.Net.Http;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace netzweltapi.Controllers
 {
@@ -20,7 +21,47 @@ namespace netzweltapi.Controllers
             HttpResponseMessage response = await client.GetAsync("https://netzwelt-devtest.azurewebsites.net/Territories/All");
             response.EnsureSuccessStatusCode();
             var result = await response.Content.ReadAsStringAsync();
-            return Ok(result);
+            var resultMap = JsonConvert.DeserializeObject<Dictionary<string, object>>(result);
+
+            List<TerritoryData>? res = JsonConvert.DeserializeObject<List<TerritoryData>>(resultMap["data"].ToString());
+
+            // Create a dictionary to store the data items by their ID
+            Dictionary<string, TerritoryData> dataDictionary = new Dictionary<string, TerritoryData>();
+
+            if(res != null)
+            {
+                // Add the data items to the dictionary using their ID as the key
+                foreach (TerritoryData dataItem in res)
+                {
+                    dataDictionary[dataItem.id] = dataItem;
+                }
+
+                // Create a list to store the final data with parent-child relationship
+                List<TerritoryData> finalList = new List<TerritoryData>();
+
+                // Iterate over the data items and assign parent-child relationships
+                foreach (TerritoryData dataItem in res)
+                {
+                    if (dataItem.parent != null && dataDictionary.ContainsKey(dataItem.parent))
+                    {
+                        TerritoryData parentItem = dataDictionary[dataItem.parent];
+                        parentItem.children ??= new List<TerritoryData>();
+                        parentItem.children.Add(dataItem);
+                    }
+                    else
+                    {
+                        finalList.Add(dataItem);
+                    }
+                }
+
+                Data data = new Data();
+                data.data = finalList;
+
+                // return Ok(JsonConvert.SerializeObject(data));
+                return Ok(finalList);
+            }
+
+            return Ok();
         }
 
         [HttpPost]
